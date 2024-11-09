@@ -217,12 +217,6 @@ function configure_dns() {
     echo "[INFO] Configure DNS Completed"
 }
 
-function install_mcafee() {
-    install_mcafee_agent
-    install_mcafee_ens
-    install_mcafee_dlp
-}
-
 function install_mcafee_agent() {
     ## Install McAfee
     echo "[INFO] Installing McAfee Agent"
@@ -262,6 +256,12 @@ function install_mcafee_dlp() {
     else
         echo "[INFO] McAfee DLP Already Installed"
     fi
+}
+
+function install_mcafee() {
+    install_mcafee_agent
+    install_mcafee_ens
+    install_mcafee_dlp
 }
 
 function add_domain_admin_to_admin_group() { 
@@ -329,12 +329,12 @@ function add_domain_group_to_sudoer() {
     install_cisco
     install_vnc
     install_intune
+    install_mcafee
     install_printer
     install_webex
     install_tdoc
     install_office365
     configure_dns
-    install_mcafee
     add_domain_admin_to_admin_group
     disable_local_users
     add_domain_group_to_sudoer
