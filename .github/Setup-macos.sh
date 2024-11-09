@@ -341,3 +341,4 @@ function add_domain_group_to_sudoer() {
  }
 ## -----------------------------------------------------------------------------------------##
 main
+ echo "MacOS setup completed!"
